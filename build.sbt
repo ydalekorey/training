@@ -8,6 +8,7 @@ scalaVersion := "2.11.7"
 
 libraryDependencies ++= Seq(
   jdbc,
+  "org.webjars.bower" % "adminlte" % "2.3.3",
   "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.1" % Test
 )
 
