@@ -16,6 +16,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
             <!-- Ionicons -->
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+        <link rel="stylesheet" href="@routes.Assets.versioned("lib/adminlte/plugins/fullcalendar/fullcalendar.min.css")">
+        <link rel="stylesheet" href="@routes.Assets.versioned("lib/adminlte/plugins/fullcalendar/fullcalendar.print.css")" media="print">
             <!-- Theme style -->
         <link rel="stylesheet" href="@routes.Assets.versioned("lib/adminlte/dist/css/AdminLTE.min.css")">
             <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
@@ -355,10 +358,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <script src="@routes.Assets.versioned("lib/react/react-dom.js")"></script>
             <!-- Bootstrap 3.3.5 -->
         <script src="@routes.Assets.versioned("lib/adminlte/bootstrap/js/bootstrap.min.js")"></script>
+        <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
             <!-- AdminLTE App -->
         <script src="@routes.Assets.versioned("lib/adminlte/dist/js/app.js")"></script>
 
-        <script src="@routes.Assets.versioned("javascripts/comment-box.js")"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+        <script src="@routes.Assets.versioned("lib/adminlte/plugins/fullcalendar/fullcalendar.min.js")"></script>
+
+        <script src="@routes.Assets.versioned("javascripts/schedule.js")"></script>
 
     </body>
 </html>
