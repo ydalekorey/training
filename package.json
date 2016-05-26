@@ -1,0 +1,9 @@
+{
+  "name": "training",
+  "version": "0.0.1",
+
+  "devDependencies": {
+    "babel-core": "6.9.0",
+    "babel-preset-react": "6.5.0"
+  }
+}

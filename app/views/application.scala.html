@@ -267,7 +267,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </section>
 
                     <!-- Main content -->
-                <section class="content">
+                <section id="react-content" class="content">
 
                         <!-- Your Page Content Here -->
 
@@ -350,12 +350,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- REQUIRED JS SCRIPTS -->
 
-        <!-- jQuery 2.1.4 -->
         <script src="@routes.Assets.versioned("lib/adminlte/plugins/jQuery/jQuery-2.2.0.min.js")"></script>
+        <script src="@routes.Assets.versioned("lib/react/react.js")"></script>
+        <script src="@routes.Assets.versioned("lib/react/react-dom.js")"></script>
             <!-- Bootstrap 3.3.5 -->
         <script src="@routes.Assets.versioned("lib/adminlte/bootstrap/js/bootstrap.min.js")"></script>
             <!-- AdminLTE App -->
         <script src="@routes.Assets.versioned("lib/adminlte/dist/js/app.js")"></script>
+
+        <script src="@routes.Assets.versioned("javascripts/comment-box.js")"></script>
 
     </body>
 </html>
