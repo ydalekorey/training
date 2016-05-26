@@ -103,7 +103,7 @@
                                 <h3 className="box-title">Create Event</h3>
                             </div>
                             <div className="box-body">
-                                <div className="btn-group" style="width: 100%; margin-bottom: 10px;">
+                                <div className="btn-group" style={{width: '100%', marginBottom: '10px'}}>
                                     <ul className="fc-color-picker" id="color-chooser">
                                         <li><a className="text-aqua" href="#"><i className="fa fa-square"/></a></li>
                                         <li><a className="text-blue" href="#"><i className="fa fa-square"/></a></li>
