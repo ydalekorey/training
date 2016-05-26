@@ -80,7 +80,7 @@
                                 <h4 className="box-title">Draggable Events</h4>
                             </div>
                             <div className="box-body">
-                                <!-- the events -->
+                                {/*the events*/}
                                 <div id="external-events">
                                     <div className="external-event bg-green">Lunch</div>
                                     <div className="external-event bg-yellow">Go home</div>
@@ -88,49 +88,48 @@
                                     <div className="external-event bg-light-blue">Work on UI design</div>
                                     <div className="external-event bg-red">Sleep tight</div>
                                     <div className="checkbox">
-                                        <label for="drop-remove">
-                                            <input type="checkbox" id="drop-remove">
+                                        <label htmlFor="drop-remove">
+                                            <input type="checkbox" id="drop-remove"/>
                                                 remove after drop
                                         </label>
                                     </div>
                                 </div>
                             </div>
-                            <!-- /.box-body -->
+                            {/*/.box-body*/}
                         </div>
-                        <!-- /. box -->
+                        {/*/. box*/}
                         <div className="box box-solid">
                             <div className="box-header with-border">
                                 <h3 className="box-title">Create Event</h3>
                             </div>
                             <div className="box-body">
                                 <div className="btn-group" style="width: 100%; margin-bottom: 10px;">
-                                    <!--<button type="button" id="color-chooser-btn" className="btn btn-info btn-block dropdown-toggle" data-toggle="dropdown">Color <span className="caret"></span></button>-->
                                     <ul className="fc-color-picker" id="color-chooser">
-                                        <li><a className="text-aqua" href="#"><i className="fa fa-square"></i></a></li>
-                                        <li><a className="text-blue" href="#"><i className="fa fa-square"></i></a></li>
-                                        <li><a className="text-light-blue" href="#"><i className="fa fa-square"></i></a></li>
-                                        <li><a className="text-teal" href="#"><i className="fa fa-square"></i></a></li>
-                                        <li><a className="text-yellow" href="#"><i className="fa fa-square"></i></a></li>
-                                        <li><a className="text-orange" href="#"><i className="fa fa-square"></i></a></li>
-                                        <li><a className="text-green" href="#"><i className="fa fa-square"></i></a></li>
-                                        <li><a className="text-lime" href="#"><i className="fa fa-square"></i></a></li>
-                                        <li><a className="text-red" href="#"><i className="fa fa-square"></i></a></li>
-                                        <li><a className="text-purple" href="#"><i className="fa fa-square"></i></a></li>
-                                        <li><a className="text-fuchsia" href="#"><i className="fa fa-square"></i></a></li>
-                                        <li><a className="text-muted" href="#"><i className="fa fa-square"></i></a></li>
-                                        <li><a className="text-navy" href="#"><i className="fa fa-square"></i></a></li>
+                                        <li><a className="text-aqua" href="#"><i className="fa fa-square"/></a></li>
+                                        <li><a className="text-blue" href="#"><i className="fa fa-square"/></a></li>
+                                        <li><a className="text-light-blue" href="#"><i className="fa fa-square"/></a></li>
+                                        <li><a className="text-teal" href="#"><i className="fa fa-square"/></a></li>
+                                        <li><a className="text-yellow" href="#"><i className="fa fa-square"/></a></li>
+                                        <li><a className="text-orange" href="#"><i className="fa fa-square"/></a></li>
+                                        <li><a className="text-green" href="#"><i className="fa fa-square"/></a></li>
+                                        <li><a className="text-lime" href="#"><i className="fa fa-square"/></a></li>
+                                        <li><a className="text-red" href="#"><i className="fa fa-square"/></a></li>
+                                        <li><a className="text-purple" href="#"><i className="fa fa-square"/></a></li>
+                                        <li><a className="text-fuchsia" href="#"><i className="fa fa-square"/></a></li>
+                                        <li><a className="text-muted" href="#"><i className="fa fa-square"/></a></li>
+                                        <li><a className="text-navy" href="#"><i className="fa fa-square"/></a></li>
                                     </ul>
                                 </div>
-                                <!-- /btn-group -->
+                                {/*/btn-group*/}
                                 <div className="input-group">
-                                    <input id="new-event" type="text" className="form-control" placeholder="Event Title">
+                                    <input id="new-event" type="text" className="form-control" placeholder="Event Title"/>
 
                                         <div className="input-group-btn">
                                             <button id="add-new-event" type="button" className="btn btn-primary btn-flat">Add</button>
                                         </div>
-                                    <!-- /btn-group -->
+                                    {/*/btn-group*/}
                                 </div>
-                                <!-- /input-group -->
+                                {/*/input-group*/}
                             </div>
                         </div>
                     </div>
