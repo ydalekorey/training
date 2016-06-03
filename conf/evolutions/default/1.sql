@@ -1,7 +1,7 @@
 # --- !Ups
 
 CREATE TABLE `account` (
-	`id` INT(10) UNSIGNED NOT NULL,
+	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`email` VARCHAR(64) NOT NULL,
 	`password` CHAR(64) NOT NULL,
 	`name` VARCHAR(64) NOT NULL,
