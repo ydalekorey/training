@@ -38,4 +38,6 @@ class AccountDao @Inject()(dbConfigProvider: DatabaseConfigProvider) extends dao
     db.run(Accounts.filter(_.id === id).result.headOption)
 
   def insert(account: Account): Future[Long] = db.run(Accounts returning Accounts.map(_.id) += account)
+
+  override def count(): Future[Int] = db.run(Accounts.map(_.id).length.result)
 }

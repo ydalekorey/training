@@ -10,4 +10,6 @@ trait AccountDao {
   def findById(id: Long): Future[Option[Account]]
 
   def insert(account: Account): Future[Long]
+
+  def count(): Future[Int]
 }
