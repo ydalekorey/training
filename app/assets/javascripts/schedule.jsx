@@ -243,8 +243,5 @@
             );
         }
     });
-    ReactDOM.render(
-        <Schedule />,
-        document.getElementById('react-content')
-    );
+    ReactDOM.render(<Schedule />, document.getElementById('react-content'));
 }(React, ReactDOM, $));

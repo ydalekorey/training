@@ -1,6 +1,7 @@
 import com.google.inject.AbstractModule
 import java.time.Clock
 
+import dao.AccountDao
 import services.{ApplicationTimer, AtomicCounter, Counter}
 
 /**
@@ -16,6 +17,8 @@ import services.{ApplicationTimer, AtomicCounter, Counter}
 class Module extends AbstractModule {
 
   override def configure() = {
+
+    bind(classOf[AccountDao]).to(classOf[dao.slick.AccountDao])
     // Use the system clock as the default implementation of Clock
     bind(classOf[Clock]).toInstance(Clock.systemDefaultZone)
     // Ask Guice to create an instance of ApplicationTimer when the
