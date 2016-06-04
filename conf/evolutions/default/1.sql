@@ -1,6 +1,6 @@
 # --- !Ups
 
-CREATE TABLE `account` (
+CREATE TABLE `doctor` (
 	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`email` VARCHAR(64) NOT NULL,
 	`password` CHAR(64) NOT NULL,
@@ -13,4 +13,4 @@ ENGINE=InnoDB;
 
 # --- !Downs
 
-DROP TABLE `account`;
+DROP TABLE `doctor`;

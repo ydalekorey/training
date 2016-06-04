@@ -6,7 +6,7 @@ import models.Credentials
 import play.api.data.Form
 import play.api.data.Forms._
 import play.api.mvc._
-import services.AccountService
+import services.AuthenticationService
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
@@ -15,7 +15,7 @@ import scala.concurrent.Future
   * Created by yuriy on 21.05.16.
   */
 @Singleton
-class AuthenticationController @Inject()(accountService: AccountService) extends Controller {
+class AuthenticationController @Inject()(authenticationService: AuthenticationService) extends Controller {
 
   val credentialsForm = Form(
     mapping(
@@ -33,8 +33,8 @@ class AuthenticationController @Inject()(accountService: AccountService) extends
         Future.successful(BadRequest(views.html.login(formWithErrors)))
       },
       credentials => {
-        accountService.authenticate(credentials.email, credentials.password) map {
-          case Some(account) => Redirect(routes.ApplicationController.application()).withSession("email" -> credentials.email)
+        authenticationService.authenticate(credentials.email, credentials.password) map {
+          case Some(doctor) => Redirect(routes.ApplicationController.application()).withSession("email" -> credentials.email)
           case None => BadRequest(views.html.login(credentialsForm))
         }
       }
