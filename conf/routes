@@ -17,5 +17,7 @@ POST        /login               controllers.AuthenticationController.authentica
 
 GET         /logout              controllers.AuthenticationController.logout()
 
+GET         /appointments        controllers.AppointmentsController.appointments(startTime:Option[String], endTime:Option[String])
+
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file        controllers.Assets.versioned(path="/public", file: Asset)

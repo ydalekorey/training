@@ -6,7 +6,7 @@ import dao.DoctorDao
 import models.Doctor
 import org.mindrot.jbcrypt.BCrypt
 
-import scala.concurrent.ExecutionContext.Implicits.global
+import play.api.libs.concurrent.Execution.Implicits._
 import scala.concurrent.Future
 
 @Singleton

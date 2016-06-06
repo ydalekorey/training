@@ -26,7 +26,7 @@ class DoctorDao @Inject()(dbConfigProvider: DatabaseConfigProvider) extends dao.
 
     def name = column[String]("name")
 
-    def * = (id.?, email, password, name) <>(Doctor.tupled, Doctor.unapply)
+    def * = (id.?, email, password, name) <>((Doctor.apply _).tupled, Doctor.unapply)
   }
 
   private val Doctors = TableQuery[DoctorsTable]

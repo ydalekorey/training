@@ -8,7 +8,7 @@ import play.api.data.Forms._
 import play.api.mvc._
 import services.AuthenticationService
 
-import scala.concurrent.ExecutionContext.Implicits.global
+import play.api.libs.concurrent.Execution.Implicits._
 import scala.concurrent.Future
 
 /**
@@ -34,7 +34,8 @@ class AuthenticationController @Inject()(authenticationService: AuthenticationSe
       },
       credentials => {
         authenticationService.authenticate(credentials.email, credentials.password) map {
-          case Some(doctor) => Redirect(routes.ApplicationController.application()).withSession("email" -> credentials.email)
+          case Some(doctor) => Redirect(routes.ApplicationController.application())
+            .withSession("userId" -> doctor.id.map(_.toString).getOrElse(""))
           case None => BadRequest(views.html.login(credentialsForm))
         }
       }

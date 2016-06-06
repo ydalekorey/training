@@ -9,6 +9,8 @@ scalaVersion := "2.11.7"
 libraryDependencies ++= Seq(
   "org.mindrot" % "jbcrypt" % "0.3m",
 
+  "com.github.nscala-time" %% "nscala-time" % "2.12.0",
+
   "com.typesafe.play" %% "play-slick" % "2.0.0",
   "com.typesafe.play" %% "play-slick-evolutions" % "2.0.0",
   "mysql" % "mysql-connector-java" % "5.1.39",

@@ -2,7 +2,7 @@ import com.google.inject.AbstractModule
 import java.time.Clock
 
 import bootstrap.InitialData
-import dao.DoctorDao
+import dao.{AppointmentDao, DoctorDao}
 import services.{ApplicationTimer, AtomicCounter, Counter}
 
 /**
@@ -20,6 +20,7 @@ class Module extends AbstractModule {
   override def configure() = {
 
     bind(classOf[DoctorDao]).to(classOf[dao.slick.DoctorDao])
+    bind(classOf[AppointmentDao]).to(classOf[dao.slick.AppointmentDao])
 
     bind(classOf[InitialData]).asEagerSingleton()
     // Use the system clock as the default implementation of Clock
