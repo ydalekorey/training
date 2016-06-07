@@ -4,7 +4,7 @@ import javax.inject.{Inject, Singleton}
 
 import com.github.nscala_time.time.Imports._
 import models.Appointment
-import org.joda.time.format.{PeriodFormat, PeriodFormatter}
+import org.joda.time.format.{PeriodFormat, PeriodFormatter, PeriodFormatterBuilder}
 import play.api.db.slick.DatabaseConfigProvider
 import slick.driver.JdbcProfile
 
@@ -13,9 +13,14 @@ import scala.concurrent.Future
 @Singleton
 class AppointmentDao @Inject()(dbConfigProvider: DatabaseConfigProvider) extends dao.AppointmentDao {
 
-  private val dbDateTimePattern = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss")
+  private val dbDateTimePattern = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.S")
 
-  private val periodFormat = PeriodFormat.getDefault
+  private val periodFormatter = new PeriodFormatterBuilder()
+    .printZeroAlways()
+    .appendHours().appendSeparator(":")
+    .appendMinutes().appendSeparator(":")
+    .appendSeconds()
+    .toFormatter
 
   protected val dbConfig = dbConfigProvider.get[JdbcProfile]
 
@@ -29,8 +34,8 @@ class AppointmentDao @Inject()(dbConfigProvider: DatabaseConfigProvider) extends
   )
 
   implicit val durationTimeColumnType = MappedColumnType.base[Duration, String](
-    { d => d.toPeriod.toString(periodFormat) },    // map Duration to Long
-    { l => Period.parse(l, periodFormat).toD } // map Long to Duration
+    { d => periodFormatter.print(d.toPeriod) },    // map Duration to Long
+    { p => Period.parse(p, periodFormatter).toStandardDuration } // map Long to Duration
   )
 
   private class AppointmentsTable(tag: Tag) extends Table[Appointment](tag, "appointment") {
