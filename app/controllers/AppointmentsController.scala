@@ -8,6 +8,7 @@ import play.api.libs.json.Json
 import play.api.mvc._
 import security.Security
 import play.api.libs.concurrent.Execution.Implicits._
+import web.json.implicits.Appointments._
 
 @Singleton
 class AppointmentsController @Inject()(appointmentDao: AppointmentDao) extends Controller with Security {
