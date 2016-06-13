@@ -14,11 +14,9 @@ import web.json.implicits.Appointments._
 class AppointmentsController @Inject()(appointmentDao: AppointmentDao) extends Controller with Security {
   def appointments(startTime: Option[String], endTime: Option[String]) = isAuthenticatedAsync { userId => implicit request =>
 
-    //val from = startTime.map(DateTime.parse).getOrElse(DateTime.now().withTime(LocalTime.Midnight))
-    //val to = startTime.map(DateTime.parse).getOrElse(DateTime.now().plusDays(1).withTime(LocalTime.Midnight))
-
-    val from = DateTime.now().withTime(LocalTime.Midnight)
-    val to = DateTime.now().plusDays(1).withTime(LocalTime.Midnight)
+    val currentMonth = YearMonth.now().toInterval
+    val from = startTime.map(LocalDate.parse(_).toDateTime(LocalTime.Midnight)).getOrElse(currentMonth.getStart)
+    val to = endTime.map(LocalDate.parse(_).plusDays(1).toDateTime(LocalTime.Midnight)).getOrElse(currentMonth.getEnd)
 
     for {
       appointments <- appointmentDao.findByDoctorIdAndDateTimeRange(userId, from, to)

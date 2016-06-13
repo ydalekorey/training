@@ -16,12 +16,11 @@
                 },
                 events: '/appointments',
                 eventDataTransform: function (appointment) {
-                    var event =  {
+                    return  {
                         title: "title",
                         start: appointment.startTime,
                         end: moment(appointment.startTime).add(moment.duration(appointment.duration)).format()
                     };
-                    return event
                 },
                 allDaySlot: false,
                 editable: true,

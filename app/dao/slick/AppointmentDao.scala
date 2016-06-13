@@ -4,7 +4,7 @@ import javax.inject.{Inject, Singleton}
 
 import com.github.nscala_time.time.Imports._
 import models.Appointment
-import org.joda.time.format.{PeriodFormat, PeriodFormatter, PeriodFormatterBuilder}
+import org.joda.time.format.PeriodFormatterBuilder
 import play.api.db.slick.DatabaseConfigProvider
 import slick.driver.JdbcProfile
 
